@@ -68,7 +68,7 @@ public class Home {
 				System.out.println("You Have Entered Wrong Type of Data");
 				sc.nextLine();
 			}
-		}while (input != 5);//end of loop on choosing exit option
+		}while (input != 6);//end of loop on choosing exit option
 		sc.close();//close the Scanner Resource
 	}
 }

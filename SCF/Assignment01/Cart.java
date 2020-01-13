@@ -181,7 +181,7 @@ public class Cart {
 	}
 
 	//method to generate the bill of selected item
-	void generateBill(){
+	boolean generateBill(){
 		if(cart.isEmpty()){//check that cart is empty or not
 			System.out.println("Cart is Empty, To generate bill add items in your Cart!!!");
 		}
@@ -200,5 +200,6 @@ public class Cart {
 			}
 			System.out.println("Total Amount:"+amount);//print the final amount of cart
 		}
+		return true;
 	}
 }

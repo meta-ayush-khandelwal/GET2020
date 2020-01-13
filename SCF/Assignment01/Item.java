@@ -26,7 +26,7 @@ public class Item{
 	void display(){ 
 		//it'll display the items
 		int i=1;
-		System.out.println("\n----------------------Items Menu------------------------ ");
+		System.out.println("\n----------------------Items Menu------------------------");
 		System.out.println("ID\t\tItem\t\tPrice");
 		for (Map.Entry< String,Integer> me:item.entrySet()) 
 		{ 
