@@ -6,13 +6,43 @@ public class HexCalc {
 	Scanner sc= new Scanner(System.in);
 	boolean sign=true,flag=true;
 	long number;
+	int base;
+	String baseName;
+	final int num=48;
 
-	void getValues(){
+	boolean getValues(){
 		System.out.println("Enter the First Number");		
 		firstNumber=sc.next();
-		//sc.nextLine();
-		System.out.println("Enter the Second Number");
-		secondNumber=sc.next();
+		if(checkHexValue(firstNumber)){	
+			System.out.println("Enter the Second Number");
+			secondNumber=sc.next();
+			if(!checkHexValue(secondNumber))
+				getValues();
+		}
+		else{
+			getValues();
+		}
+		return true;
+	}
+
+	boolean getBase(){
+		System.out.print("Enter Base:");
+		base=sc.nextInt();
+		if(base==2||base==8||base==16){
+
+			if(base==2)
+				baseName="Binary";
+			else if(base==8)
+				baseName="Octal";
+			else if(base==16)
+				baseName="HexaDecimal";
+			return true;
+		}
+		else{
+			System.out.println("Error!!! Enter Correct Base(2 or 8 or 16)");
+			getBase();
+		}
+		return true;
 	}
 
 	long getInput(){
@@ -89,9 +119,9 @@ public class HexCalc {
 			return "0";
 		while(number>0)  
 		{  
-			rem=(int)(number%16);   
+			rem=(int)(number%base);   
 			hexNumber=hexchars[rem]+hexNumber;   
-			number=number/16;  
+			number=number/base;  
 		}      
 		return hexNumber;
 	}
@@ -101,13 +131,13 @@ public class HexCalc {
 		long[] a= new long[number.length()];
 		for(int i=0;i<number.length();i++){
 			long c=(long)number.charAt(i);
-			if(c>=48 && c<=57){
-				a[number.length()-1-i]=c-48;
+			if(c>=num && c<=(num+base-1)){
+				a[number.length()-1-i]=c-num;
 			}
-			else if(c>=65 && c<=70){
+			else if(c>=65 && c<=70 && base==16){
 				a[number.length()-1-i]=c-55;
 			}
-			else if(c>=97 && c<=102){
+			else if(c>=97 && c<=102 && base==16){
 				a[number.length()-1-i]=c-87;
 			}
 			else{
@@ -117,23 +147,25 @@ public class HexCalc {
 			}
 		}
 		for(int i=0;i<a.length;i++){
-			decimalNumber+=(a[i]*(int)Math.pow(16,i));
+			decimalNumber+=(a[i]*(int)Math.pow(base,i));
 		}
 		return decimalNumber;
 	}
+
+
 
 	boolean checkHexValue(String number){
 		boolean res=true;
 		for(int i=0;i<number.length();i++){
 			int c=(int)number.charAt(i);
-			if(c>=48 && c<=57){
+			if(c>=num && c<=(num+base-1)){
 				res=true;
 			}
-			else if(c>=65 && c<=70){
+			else if(c>=65 && c<=70 && base==16){
 				res=true;
 			}
-			else if(c>=97 && c<=102){
-				res=true;
+			else if(c>=97 && c<=102 && base==16){
+				res= true;
 			}
 			else{
 				System.out.println("Wrong format entered");
@@ -147,40 +179,21 @@ public class HexCalc {
 	boolean greaterNumber(){
 		String numberFirst=perfectNumber(this.firstNumber);
 		String numberSecond=perfectNumber(this.secondNumber);
-		if(checkHexValue(numberFirst)&&checkHexValue(numberSecond)){
-			int firstLength=numberFirst.length();
-			int secondLength=numberSecond.length();
-			if(firstLength==secondLength){
-				for(int i=0;i<firstLength;i++){
-					if((int)numberFirst.toLowerCase().charAt(i)>(int)numberSecond.toLowerCase().charAt(i)){
-						return true;
-					}
-				}
-			}
-			else{
-				int size=firstLength;
-				if(firstLength<secondLength)
-					size=secondLength;
-				for(int i=0;i<size;i++){
-					if((int)numberFirst.toLowerCase().charAt(i)>(int)numberSecond.toLowerCase().charAt(i)){
-						if(numberFirst.substring(i,firstLength).length()>numberSecond.substring(i, secondLength).length()){
-							return true;	
-						}
-						else
-							return false;
-					}
-					else if((int)numberFirst.toLowerCase().charAt(i)<(int)numberSecond.toLowerCase().charAt(i)){
-						if(numberFirst.substring(i,firstLength).length()>numberSecond.substring(i, secondLength).length()){
-							return true;	
-						}
-						else
-							return false;
-					}
+		int firstLength=numberFirst.length();
+		int secondLength=numberSecond.length();
+		if(firstLength==secondLength){
+			for(int i=0;i<firstLength;i++){
+				if((int)Character.toLowerCase(numberFirst.charAt(i))>(int)Character.toLowerCase(numberSecond.toLowerCase().charAt(i))){
+					return true;
 				}
 			}
 		}
-		else
-			flag=false;
+		else if(firstLength>secondLength)
+			return true;
+		else{
+			return false;
+		}
+		flag=false;
 		return false;
 
 	}
@@ -188,40 +201,23 @@ public class HexCalc {
 	boolean lesserNumber(){
 		String numberFirst=perfectNumber(this.firstNumber);
 		String numberSecond=perfectNumber(this.secondNumber);
-		if(checkHexValue(numberFirst)&&checkHexValue(numberSecond)){
-			int firstLength=numberFirst.length();
-			int secondLength=numberSecond.length();
-			if(firstLength==secondLength){
-				for(int i=0;i<firstLength;i++){
-					if((int)numberFirst.toLowerCase().charAt(i)>(int)numberSecond.toLowerCase().charAt(i)){
-						return false;
-					}
-				}
-			}
-			else{
-				int size=firstLength;
-				if(firstLength<secondLength)
-					size=secondLength;
-				for(int i=0;i<size;i++){
-					if((int)numberFirst.toLowerCase().charAt(i)>(int)numberSecond.toLowerCase().charAt(i)){
-						if(numberFirst.substring(i,firstLength).length()>numberSecond.substring(i, secondLength).length()){
-							return false;	
-						}
-						else
-							return true;
-					}
-					else if((int)numberFirst.toLowerCase().charAt(i)<(int)numberSecond.toLowerCase().charAt(i)){
-						if(numberFirst.substring(i,firstLength).length()>numberSecond.substring(i, secondLength).length()){
-							return false;	
-						}
-						else
-							return true;
-					}
+		System.out.println(numberFirst);
+		System.out.println(numberSecond);
+		int firstLength=numberFirst.length();
+		int secondLength=numberSecond.length();
+		if(firstLength==secondLength){
+			for(int i=0;i<firstLength;i++){
+				if((int)Character.toLowerCase(numberFirst.charAt(i))>(int)Character.toLowerCase(numberSecond.toLowerCase().charAt(i))){
+					return false;
 				}
 			}
 		}
-		else 
-			flag=false;
+		else if(firstLength<secondLength)
+			return true;
+		else {
+			return false;
+		}
+		flag=false;
 		return true;
 	}
 
@@ -250,10 +246,7 @@ public class HexCalc {
 				res= false;
 			else{
 				for(int i=0;i<firstLength;i++){
-					if((int)numberFirst.toLowerCase().charAt(i)>(int)numberSecond.toLowerCase().charAt(i)){
-						res= false;
-					}
-					else if((int)numberFirst.toLowerCase().charAt(i)<(int)numberSecond.toLowerCase().charAt(i))
+					if((int)Character.toLowerCase(numberFirst.charAt(i))!=(int)Character.toLowerCase(numberSecond.toLowerCase().charAt(i)))
 						res= false;
 				}
 			}
