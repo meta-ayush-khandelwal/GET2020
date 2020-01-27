@@ -34,7 +34,11 @@ public class SparseMatrixOperation {
 	}
 
 	public int[][] transposeMatrix(){
-		int[][]result=new int[row][column];
+		int[][]result;
+		if(row==column)
+			result=new int[row][column];
+		else
+			result=new int[column][row];
 		for(int i=0;i<count;i++){
 			result[matrixPoint[i][1]][matrixPoint[i][0]]=matrixPoint[i][2];
 		}
