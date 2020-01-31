@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <style>
+        input {
+            border: none;
+            border-radius: 25px;
+            border-bottom: solid 2px;
+            outline: none;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        input:focus {
+            background: rgb(158, 150, 204);
+            color: black;
+        }
+        
+        #validationMessage {
+            color: rgb(168, 3, 3);
+        }
+        
+        #vehicleValidationMessage {
+            color: rgb(168, 3, 3);
+        }
+        
+        tr {
+            width: 400px;
+        }
+        
+        table {
+            background-color: darkkhaki;
+            margin-top: 75px;
+        }
+        
+        .pass {
+            margin-top: 0;
+            margin-top: 50px;
+        }
+        
+        .passPriceHeading {
+            margin-top: 0;
+            margin-top: 50px;
+        }
+        
+        #validationMessage {
+            outline: none;
+            border: none;
+            resize: none;
+            padding-top: 25px;
+            margin-left: 32px;
+        }
+        
+        .heading {
+            margin-left: 20px;
+        }
+        
+        #vehicleForm,
+        #chooseCurrency,
+        #MotorcyclePass,
+        #CyclePass,
+        #FourWheelerPass {
+            display: none;
+        }
+        
+        .registerButton {
+            color: darkred;
+            background-color: darksalmon;
+        }
+    </style>
+    <script src="validation.js">
+    </script>
+    <TITLE>Metacube Parking System</TITLE>
+</HEAD>
+
+<BODY>
+    <div align=center id="empForm" value="E20/1339">
+        <form id="empFormInner" value="hello">
+            <H1 class="heading">Employee Registration Form</H1>
+            <div>
+                <textarea id="validationMessage" rows="4" cols="50" readonly> </textarea>
+            </div>
+            <table cellspacing=12>
+
+                <tr>
+                    <td><label>Full Name :</label></td>
+                    <td><input type=text id="name" onkeyup="validateFullName()" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender : </label></td>
+                    <td>
+                        <label><input type="radio" name="gender" value="Male" id="male" required>Male</label><br/>
+                        <label><input type="radio" name="gender" value="Female" id="female" required>Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Email id :</label></td>
+                    <td><input type="text" id="email" onkeyup="validateEmail()" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Password :</label></td>
+                    <td><input type="password" id="password" onkeyup="validatePassword()" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Confirm Password :</label></td>
+                    <td><input type="password" id="confirmPassword" onkeyup="validateConfirmPassword()" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Contact Number :</label></td>
+                    <td><input id="contact" maxlength="10" onkeyup="validateContact()" required></td>
+                </tr>
+            </table>
+            <br/>
+            <input type="button" class="registerButton" value="Register" onclick="afterEmpFormValidation()">
+        </form>
+    </div>
+
+    <div align=center id="vehicleForm">
+        <form>
+            <H1>Vehicle Registration Form</H1>
+            <table cellspacing=10>
+                <tr>
+                    <td><label>Vehicle Name :</label></td>
+                    <td><input type=text id="vehicleName" required></td>
+                </tr>
+                <tr>
+                    <td><label>Vehicle Type : </label></td>
+                    <td>
+                        <label><input type="radio" id="Cycle" name="vehicleType" value="Cycle">Cycle</label><br/>
+                        <label><input type="radio" id="MotorCycle" name="vehicleType" value="MotorCycle">Motorcycle</label><br/>
+                        <label><input type="radio" id="FourWheelers" name="vehicleType" value="FourWheelers">FourWheelers</label><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Vehicle Number :</label></td>
+                    <td><input type="text" id="vehicleNumber" required></td>
+                </tr>
+                <tr>
+                    <td><label>Employee id :</label></td>
+                    <td><input type="text" id="empId" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td><label>Identification :</label></td>
+                    <td><input type="text" id="vehicleIdentification"></td>
+                </tr>
+                <tr>
+                    <td colspan=2 id="vehicleValidationMessage"></td>
+                </tr>
+            </table>
+            <br/>
+            <input type="button" value="Register" class="registerButton" onclick="afterVehicleFormValidation()">
+        </form>
+    </div>
+
+    <div id="chooseCurrency" align="center">
+        <br/>
+        <table>
+            <tr>
+                <td><label>Choose Currency :</label></td>
+                <td><select id="currency" onchange="changePrice()">
+                    <option hidden>Choose Currency</option>
+                        <option value="INR" id="INR" >INR</option>
+                        <option value="USD" id="USD" >USD</option>
+                        <option value="YEN" id="YEN" >YEN</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="CyclePass" align="center" class="pass">
+        <h3 class="passPriceHeading">Cycle Pass Prices</h3>
+        <table border=1>
+            <tr>
+                <td><label>Daily :</label></td>
+                <td><input type="radio" value="5" name="cyclePass" class="passAmount" id="cyclePass1"><label id="cp1" class="passes">5 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Monthly :</label></td>
+                <td><input type="radio" value="100" name="cyclePass" class="passAmount" id="cyclePass2"><label id="cp2" class="passes">100 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Yearly :</label></td>
+                <td><input type="radio" value="500" name="cyclePass" class="passAmount" id="cyclePass3"><label id="cp3" class="passes">500 INR</label><br/></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="button" value="Get Pass" class="registerButton" onclick="payMessage()">
+        <br/>
+        <br/>
+    </div>
+
+    <div id="FourWheelerPass" align="center" class="pass">
+        <h3 class="passPriceHeading">Four Wheeler Pass Prices</h3>
+        <table border=1>
+            <tr>
+                <td><label>Daily :</label></td>
+                <td><input type="radio" value="20" name="fourWheelerPass" class="passAmount" id="fourwheelerPass1"><label id="fwp1" class="passes">20 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Monthly :</label></td>
+                <td><input type="radio" value="500" name="fourWheelerPass" class="passAmount" id="fourwheelerPass2"><label id="fwp2" class="passes">500 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Yearly :</label></td>
+                <td><input type="radio" value="3500" name="fourWheelerPass" class="passAmount" id="fourwheelerPass3"><label id="fwp3" class="passes">3500 INR</label><br/></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="button" value="Get Pass" class="registerButton" onclick="payMessage()">
+        <br/>
+        <br/>
+    </div>
+
+    <div id="MotorcyclePass" align="center" class="pass">
+        <h3 class="passPriceHeading">Motorcycle Pass Prices</h3>
+        <table border=1>
+            <tr>
+                <td><label>Daily :</label></td>
+                <td><input type="radio" value="10" name="motorcyclePass" class="passAmount" id="motorcyclePass1"><label id="mcp1" class="passes">10 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Monthly :</label></td>
+                <td><input type="radio" value="200" name="motorcyclePass" class="passAmount" id="motorcyclePass2"><label id="mcp2" class="passes">200 INR</label><br/></td>
+            </tr>
+            <tr>
+                <td><label>Yearly :</label></td>
+                <td><input type="radio" value="1000" name="motorcyclePass" class="passAmount" id="motorcyclePass3"><label id="mcp3" class="passes">1000 INR</label><br/></td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <input type="button" value="Get Pass" class="registerButton" onclick="payMessage()">
+        <br/>
+        <br/>
+    </div>
+    <div align="center" id="vehiclePriceMessage"></div>
+</BODY>
+
+</HTML>
