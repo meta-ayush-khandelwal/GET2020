@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="validation.js" type="text/javascript">
+	
+</script>
+<style type="text/css">
+#validationMessage {
+	outline: none;
+	border: none;
+	resize: none;
+	padding-top: 25px;
+	margin-left: 32px;
+	color: rgb(168, 3, 3);
+}
+</style>
+<title>Search Student</title>
+</head>
+<body>
+	<div align="center">
+		<textarea rows="4" cols="50" id="validationMessage"
+			readonly="readonly"></textarea>
+	</div>
+	<div align=center id="searchStudentFormOuter"
+		name="searchStudentFormOuter">
+		<form id="searchStudentForm" name="searchStudentForm"
+			action="SearchStudent" method="post">
+			<H1 class="heading">Search Student</H1>
+			<table cellspacing=12 align="center">
+				<tr>
+					<td><label>First Name :</label></td>
+					<td><input type=text id="firstName" name="firstName"
+						placeholder="First Name" required onblur="validateFirstName()"></td>
+				</tr>
+				<tr>
+					<td><label>Last Name :</label></td>
+					<td><input type=text id="lastName" name="lastName"
+						placeholder="Last Name" onblur="validateLastName()"></td>
+				</tr>
+				<tr>
+					<td><label>Class Filter :</label></td>
+					<td><select name="class" id="class">
+							<option hidden>None</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+					</select></td>
+				</tr>
+			</table>
+			<br /> <input type="submit" class="submitButton" value="Submit"
+				name="submit" onclick="return isValid()">
+		</form>
+	</div>
+
+</body>
+</html>
