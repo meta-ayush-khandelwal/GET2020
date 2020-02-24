@@ -1,0 +1,37 @@
+a,
+a:visited {
+    background-color: rgb(33, 157, 241);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    margin: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: "Times New Roman", Times, serif;
+}
+
+a:hover,
+a:active {
+    background-color: rgb(0, 150, 227);
+}
+
+body {
+    background-color: rgb(241, 241, 241);
+}
+.home-page-div {
+    text-align: center;
+    padding-top: 200px;
+}
+.home-page-div .employee-profile,
+.home-page-div .employee-profile-logout{
+    border: 2px solid black;
+    padding: 5px 18px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    width : 100px;
+    display: block;
+}
