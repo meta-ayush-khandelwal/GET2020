@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking System</title>
+
+    <link rel="StyleSheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Division for Navigation bar -->
+    <div class=NavBar>
+        <!-- Here All the four link are provided for different forms -->
+        <a href="#employeeToggle" title="Employee Registration Form">Add Employee</a>
+        <a href="#vehicleToggle" title="Vehicle Registration Form">Add Vehicle  </a>
+        <a href="#feedbackToggle" title="Feedback Form">Give Feedback  </a>
+        <a href="#passOfVehicleToggle" title="Get Passes">Passes  </a>
+    </div>
+
+    <!-- Division for Image related solution -->
+    <div>
+        <!-- Image refrence is provided here -->
+        <img class="imageOfParking" src="parkingimg.jpg" alt="Can't Open Image">
+    </div>
+
+
+
+    <!-- to hide or view the form  -->
+    <details>
+        <!-- it specifies the heading of the form  -->
+        <summary id="employeeToggle">Employee registeration form</summary>
+        <!-- Division for Employee Registeration form -->
+        <div class="formDivision">
+
+            <!-- Form for Employee Registeration Form -->
+            <!-- Here after submiting this form it will redirect to the page again -->
+            <form action=UIAssignment1.html id="employeeForm" class="form">
+                <h1>Employee Registeration Form</h1>
+
+                <!-- inputs for Name ,Gender, Email , Password , Confirm Password , Contact Number -->
+                <input id="empName" type="text" placeholder="Full Name" required pattern="[A-Za-z]{1,}" title="Only letters are allowed in name"></br>
+                <div class="gender">
+                    <label>Gender :</label>
+                    <label><input id="optionMale"  type="radio" name="gender"  required>Male </label>
+                    <label><input id="optionFemale"  type="radio" name="gender" required>Female </label></br>
+                </div>
+                <input id="empEmailId" type="email" placeholder="Email Id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Provide a proper a email format(abc@xyz.com)"></br>
+                <input id="empPassword" type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br/>
+                <input id="empConfirmPassword" type="password" placeholder="Confirm Password" required></br>
+                <input id="empContact" type="text" placeholder="Contact Number" required pattern="[0-9]{10}" title="Provide a 10 digit contact number"></br>
+                <input type="submit" value="Register">
+
+            </form>
+
+        </div>
+    </details>
+
+
+
+    <details>
+        <summary id="vehicleToggle">Vehicle registeration form</summary>
+        <!-- Division for Vehicle Registeration form -->
+        <div id="vehicleForm" class="formDivision">
+            <!-- Form for vehicle Registeration Form -->
+            <form id="vehicleFormid" action=UIAssignment1.html class="form">
+                <h1>Vehicle Registeration Form</h1>
+
+                <input id="vehicleCompany" type="text" placeholder="Vehicle Make(Company)" required></br>
+                <input id="vehicleModel" type="text" placeholder="Vehicle Model" required></br>
+                <select id="vehicleType" required>
+                <option hidden value="">Vehicle</option> 
+                <option value="Cycle" selected="selected">Cycle</option>
+                <option value="motorCycle">Motor Cycle</option>
+                <option value="car">Car</option>
+            </select><br>
+
+                <input id="vehicleNumber" type="text" placeholder="Vehicle Number" required></br>
+                <input type="text" id="empID" placeholder="Employee ID" required></br>
+                <textarea placeholder="Identification (Color, mark, Visible accessory etc.)" rows="3" cols="30" required></textarea></br>
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
+
+    </details>
+
+
+    <details>
+        <summary id="feedbackToggle">Feedback Form</summary>
+        <!-- Division for Feedback form -->
+        <div id="feedback" class="Feedback">
+
+            <form action="UIAssignment1.html" class="form">
+                <h1>Feedback Form</h1>
+                <input type="text" placeholder="Name" required></br>
+                <input type="email" placeholder="Email" required></br>
+                <input type="text" placeholder="Subject" required></br>
+                <textarea placeholder="Message" rows="3" cols="30" required></textarea></br>
+                <input type="submit" value="Send">
+
+            </form>
+
+        </div>
+
+    </details>
+
+
+    <details>
+        <summary id="passOfVehicleToggle">Passes</summary>
+        <!-- Division for Passes form -->
+        <div id="passOfVehicle" class="PassOfVehicle">
+
+
+            <div class="pricingRegion">
+
+                <div class="priceCard" id="cycle">
+
+                    <div class="passHead">
+                        <h2>Cycle</h2>
+                    </div>
+                    <div class="passInfo">
+                        <p id="passPrice">&#8377; 100</p>
+                        <p id="passType">/month</p>
+                    </div>
+                    <div class="passTypeSelection">
+                        <p id="day_cycle">Daily &#8377; 5</p>
+                        <p id="month_cycle">Monthly &#8377;100</p>
+                        <p id="year_cycle" class="yearPass">Yearly &#8377; 500</p>
+                    </div>
+                    <p><a href="" class="button">Purchase Now</a></p>
+
+                </div>
+
+                <div class="priceCard" id="motorCycle">
+
+                    <div class="passHead">
+                        <h2>Motorcycle</h2>
+                    </div>
+                    <div class="passInfo">
+                        <p id="passPrice">&#8377; 200</p>
+                        <p id="passType">/month</p>
+                    </div>
+                    <div class="passTypeSelection">
+                        <p id="day_motorcycle">Daily &#8377; 100</p>
+                        <p id="month_motorcycle">Monthly &#8377; 200</p>
+                        <p id="year_motorcycle" class="yearPass">Yearly &#8377; 1000</p>
+                    </div>
+                    <p><a href="" class="button">Purchase Now</a></p>
+
+                </div>
+
+                <div class="priceCard" id="fourWheelers">
+
+                    <div class="passHead">
+                        <h2>Car</h2>
+                    </div>
+                    <div class="passInfo">
+                        <p id="passPrice">&#8377; 500 </p>
+                        <p id="passType">/month</p>
+                    </div>
+                    <div class="passTypeSelection">
+                        <p id="day_fourwheelers">Daily &#8377; 200</p>
+                        <p id="month_fourwheelers">Monthly &#8377; 500</p>
+                        <p id="year_fourwheelers" class="yearPass">Yearly &#8377; 3500</p>
+                    </div>
+                    <p><a href="" class="button">Purchase Now</a></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </details>
+
+
+</body>
+
+</html>
