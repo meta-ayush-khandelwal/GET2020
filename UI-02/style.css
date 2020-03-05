@@ -1,0 +1,223 @@
+/* this set's the background color for whole body */
+
+
+/* setting the margin to 0  */
+
+body {
+    background-color: #363542;
+    margin: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* this sets the background color of navigation bar  */
+
+.NavBar {
+    background-color: black;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+}
+
+
+/* this set's the color and measurements of references in action  */
+
+.NavBar a {
+    color: whitesmoke;
+    text-align: center;
+    margin: 100px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.NavBar a:hover {
+    color: rgb(167, 154, 150);
+}
+
+
+/* setting the dimension of image  */
+
+.imageOfParking {
+    width: 100%;
+    height: 707px;
+}
+
+
+/* setting the font of heading h1  */
+
+h1 {
+    font-style: italic;
+}
+
+
+/* setting the dimension of every form  */
+
+.form {
+    text-align: center;
+    border-width: 15px;
+    padding: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgb(212, 209, 209);
+    border-radius: 10px;
+    border-bottom: 5px solid blue;
+}
+
+
+/*setting the dimensions and figure of text,email,password,select and textarea 
+ type of inputs to get symmetry in the programme  */
+
+.form input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    border-bottom: 2px solid blue;
+    padding: 20px;
+    width: 350px;
+    resize: none;
+}
+
+select {
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    border-bottom: 2px solid blue;
+    padding: 20px;
+    width: 390px;
+    resize: none;
+}
+
+
+/* setting the dimensions and color of submit and button type inputs  */
+
+input[type=submit],
+input[type=button] {
+    margin: 15px;
+    font-size: 16px;
+    color: whitesmoke;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    border-radius: 23px;
+    padding: 20px;
+    width: 300px;
+    background-color: blue;
+}
+
+input[type=submit]:hover,
+.button:hover {
+    background-color: cadetblue;
+}
+
+summary::-webkit-details-marker {
+    margin-left: 20px;
+}
+
+article>details {
+    background-color: rgb(245, 208, 166);
+}
+
+details>summary {
+    font-size: 26px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #40191e;
+    outline-color: black;
+    /* outline-style: none; */
+}
+
+details>summary:hover {
+    background-color: rgb(245, 208, 166);
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: "border-box";
+}
+
+.pricingRegion {
+    background: rgb(212, 209, 209);
+    box-shadow: 1px 5px 20px #000;
+    width: 98%;
+    height: auto;
+    padding: 20px auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    border-bottom: 5px solid blue;
+}
+
+.priceCard {
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    height: auto;
+    padding: 30px 10px;
+    margin: 30px 55px;
+    box-shadow: 1px 4px 5px #000;
+    border-radius: 10px;
+    border-bottom: 5px solid blue;
+    background-color: #fff;
+}
+
+.priceCard>.passInfo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 2px solid #6c5ce7;
+}
+
+#passPrice,
+#passType {
+    position: relative;
+    top: 25px;
+}
+
+#passPrice {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.passTypeSelection p {
+    margin: 5px auto;
+}
+
+.gender {
+    padding: 8px 8px 8px 8px;
+    font-size: 20px;
+}
+
+input[type=radio] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 23px;
+    padding: 20px;
+    width: 300px;
+    background-color: blue;
+}
+
+.yearPass {
+    padding-bottom: 25px;
+}
