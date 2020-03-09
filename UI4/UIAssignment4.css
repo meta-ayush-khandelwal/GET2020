@@ -1,0 +1,549 @@
+/* applying for all */
+
+* {
+    text-decoration: none;
+    color: white;
+    font-family: myFirstFont;
+}
+
+
+/* setting margin by default zero */
+
+body {
+    margin: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Custom fonts / user defined specific fonts */
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/ubuntu-b.ttf);
+}
+
+@font-face {
+    font-family: mySecondFont;
+    src: url(fonts/ubuntu-r.ttf);
+}
+
+@font-face {
+    font-family: myThirdFont;
+    src: url(fonts/ubuntu-m.ttf);
+}
+
+@font-face {
+    font-family: myFourthFont;
+    src: url(fonts/ubuntu-.ttf);
+}
+
+
+/* background image for the header  */
+
+header {
+    background-image: url("images/homebg.png");
+}
+
+
+/* setting heading size */
+
+h3 {
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+
+/* Navigation tab settings */
+
+ul.navigation_tab2 {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 25%;
+    font-size: 14px;
+}
+
+
+/* Navigation bar settings */
+
+nav.navigation_bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 25px;
+    margin-left: 20px;
+}
+
+.navigation_tab3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 8%;
+    margin-right: 90px;
+}
+
+
+/* Styling for the Weather App Section  */
+
+.weatherApp {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+
+/* setting text size */
+
+.weatherApp_txt {
+    /* margin-left: 300px; */
+    font-size: 3.5em;
+    width: 35%;
+}
+
+
+/* for download button at cover */
+
+#downloadbutton {
+    background-color: #FF7E39;
+    font-size: 15px;
+    padding: 20px 30px;
+    border-radius: 7px;
+    border: 0;
+}
+
+
+/* for feature button */
+
+#featurebutton {
+    background-color: #5070B6;
+    font-size: 15px;
+    padding: 20px 30px;
+    border-radius: 7px;
+    border: 0;
+}
+
+
+/* for setting weather image */
+
+.weatherApp_img {
+    padding-top: 80px;
+    padding-left: 60px;
+    padding-bottom: 130px;
+}
+
+
+/* Styling of all the heading sub-heading of different sections */
+
+.heading {
+    color: #4679EB;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 150px;
+    margin-right: 25px;
+    margin-bottom: 0px;
+}
+
+.subheading {
+    color: gray;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: myThirdFont;
+    margin-right: 25px;
+    margin-bottom: 50px;
+}
+
+
+/* Styling of Perfect Features Section */
+
+.perfectFeaturesContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 80px;
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+.PerfectFeatureImage {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.featurePoint {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.para_heading {
+    color: black;
+    font-size: 1.5em;
+    font-family: myThirdFont;
+    padding-top: 23px;
+    margin-block-end: 8px;
+}
+
+.para_subheading {
+    color: gray;
+    font-size: .9em;
+    font-family: mySecondFont;
+}
+
+.icon {
+    color: #FF7E39;
+    padding-top: 40px;
+    align-self: flex-start;
+    margin-right: 20px;
+}
+
+#img1 {
+    transform: skewY(5deg) scale(0.7, 0.7);
+    z-index: -6;
+    margin-left: -470px;
+    margin-top: 30px;
+    position: absolute;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+#img2 {
+    transform: skewY(5deg) scale(0.9, 0.9);
+    z-index: -3;
+    margin-left: -280px;
+    margin-top: 40px;
+    position: absolute;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+#img3 {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+#img4 {
+    transform: skewY(-5deg) scale(0.9, 0.9);
+    z-index: -3;
+    margin-left: -30px;
+    margin-top: 40px;
+    position: absolute;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+#img5 {
+    transform: skewY(-5deg) scale(0.7, 0.7);
+    z-index: -6;
+    margin-left: 160px;
+    margin-top: 30px;
+    position: absolute;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    color: #4679EB;
+    font-size: 60px;
+    transition: 0.6s ease;
+    border-radius: 0 0.5px 0.5px 0;
+    user-select: none;
+    z-index: 1;
+    position: absolute;
+    margin-top: 260px;
+    margin-left: -400px;
+}
+
+.next {
+    margin-left: 370px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* Styling for Screenshots Section  */
+
+.ScreenshotsContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.screenshotPoint1 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-left: -120px;
+}
+
+.screenshotPoint2 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-left: 170px;
+    padding-right: 150px;
+}
+
+.screenshotPoint3 {
+    padding-top: 100px;
+    width: 36%;
+    padding-right: 80px;
+    padding-left: -18px;
+    margin-left: 80px;
+}
+
+.screenshotPoint4 {
+    /* padding-top: 100px; */
+    width: 60%;
+    margin-left: -250px;
+}
+
+.screenshot_image {
+    z-index: -2;
+    padding-left: 250px;
+}
+
+.ss_content {
+    color: gray;
+    font-family: mySecondFont;
+    font-size: 1.53em;
+    margin-right: 8px;
+}
+
+.ss_heading {
+    color: black;
+    font-family: myThirdFont;
+    font-size: 2em;
+}
+
+
+/* Styling for the Text behind the images  */
+
+.DesignText {
+    transform: rotate(90deg);
+    color: #DDDDDD;
+    position: absolute;
+    font-family: mySecondFont;
+    font-size: 13em;
+    font-weight: 0.5;
+    margin-top: 170px;
+    z-index: -4;
+    margin-left: 250px;
+}
+
+.rainy {
+    margin-left: 280px;
+    font-size: 15em;
+}
+
+.sunny_text {
+    font-size: 14.5em;
+    margin-top: 155px;
+}
+
+
+/* Round objects on the images */
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 3;
+    position: absolute;
+}
+
+.cloudy_circle {
+    background-color: #FCED6E;
+    margin-left: 500px;
+    margin-top: 155px;
+}
+
+.deg_circle {
+    position: absolute;
+    background-color: #6A9FFB;
+    margin-top: 365px;
+    margin-left: 165px;
+}
+
+.circle_text {
+    position: absolute;
+    padding-top: 40px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-family: mySecondFont;
+}
+
+.rainy_circle_text {
+    position: absolute;
+    padding-top: 40px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-family: mySecondFont;
+    z-index: 4;
+}
+
+.deg_text {
+    position: absolute;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 1.2em;
+    font-family: mySecondFont;
+}
+
+.nine_deg_circle {
+    position: absolute;
+    background-color: #7691C8;
+    margin-top: 365px;
+    margin-left: 180px;
+}
+
+.rainy_circle {
+    position: absolute;
+    background-color: #B7FBEE;
+    margin-left: 485px;
+    margin-top: 155px;
+}
+
+.two_five_deg_circle {
+    position: absolute;
+    background-color: #FC6A45;
+    margin-top: 365px;
+    margin-left: 180px;
+}
+
+.sunny_circle {
+    position: absolute;
+    background-color: #F2A054;
+    margin-top: 120px;
+    margin-left: -40px;
+    z-index: 3;
+}
+
+
+/* Styling for the Reviews Section  */
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+    margin-left: 80px;
+}
+
+.review_content {
+    color: black;
+    font-size: 1.6em;
+    font-family: myThirdFont;
+    width: 90%;
+    border-top: 10px;
+    margin-bottom: 10px;
+}
+
+.review_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.author {
+    font-size: 1.3em;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.review_n1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 200px;
+    padding-right: 30px;
+}
+
+.review_n2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 50px;
+    margin-right: 100px;
+}
+
+
+/* Styling for the Footer Section  */
+
+.footer_section {
+    background-color: #383856;
+    height: 180px;
+}
+
+.footer-link {
+    color: #ABAEBB;
+}
+
+.rights_registered {
+    text-align: center;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+.rights_registered:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 64%;
+    margin-left: 200px;
+}
+
+.before_footer {
+    background-image: url("images/downloadbg.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.before_footer_content {
+    width: 32%;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.before_footer_image {
+    margin-top: 150px;
+    margin-right: 200px;
+    width: 40%;
+}
+
+#how_download {
+    font-size: 42px;
+    font-family: myThirdFont;
+}
+
+#just_download {
+    font-family: myThirdFont;
+    font-size: 20px;
+    padding-right: 70px;
+}
+
+.before_footer_icon {
+    width: 30%;
+}
+
+.inverted_comma {
+    color: #4679EB;
+    font-size: 50px;
+}
+
+.quote-right {
+    align-self: flex-end;
+    margin-right: 0px;
+    margin-left: 450px;
+}
